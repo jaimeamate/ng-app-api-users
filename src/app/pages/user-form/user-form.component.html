@@ -1,1 +1,24 @@
-<p>user-form works!</p>
+<form [formGroup]="usersForm" (ngSubmit)="getDataForm()">
+    <div class="mb-3">
+        <label for="first_name" class="form-label">First name</label>
+        <input type="text" class="form-control" id="first_name" placeholder="James" formControlName="first_name">
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="last_name" placeholder="Jackson Jhonson" formControlName="last_name">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="name.lastname" formControlName="username">
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Photo</label>
+        <input type="text" class="form-control" id="image" placeholder="https://domain.subdomain/path/.../image.image-extension" formControlName="image">
+    </div>
+    <input type="submit" [value]="button1_value" class="btn btn-success me-2" [disabled]="!usersForm.valid">
+    <input [type]="button2_type" [value]="button2_value" class="btn btn-secondary">
+</form>
