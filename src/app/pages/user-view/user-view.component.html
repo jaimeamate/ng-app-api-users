@@ -1,1 +1,10 @@
-<p>user-view works!</p>
+<div class="d-flex gap-3 justify-content-center mt-5">
+    <img [src]="user.image" [alt]="" class="img-fluid rounded-circle">
+    <div class="border-start ps-4">
+        <h2>{{user.first_name}}</h2>
+        <h2>{{user.last_name}}</h2>
+        <p><small><b>Nombre de Usuario: </b>{{user.username}}</small></p>
+        <p><small><b>Email: </b>{{user.email}}</small></p>
+        <app-botonera-user-card [parent]="'view'" [user]="user"></app-botonera-user-card>
+    </div>
+</div>
