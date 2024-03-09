@@ -1,5 +1,5 @@
 import { Component, Input, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IUser } from '../../interfaces/iuser.interface';
 import { UsersService } from '../../services/users.service';
 
@@ -11,18 +11,23 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './botonera-user-card.component.css'
 })
 export class BotoneraUserCardComponent {
+  router: Router = inject(Router)
+  @Input() parent: string = ''
   @Input() user:IUser | any
   usersServices: UsersService = inject(UsersService)
 
-  deleteUser(): void {
+  async deleteUser(): Promise<any> {
     let borrar = confirm(`Vas a eliminar el usuario ${this.user.username}, ¿estás seguro?`)
     if(borrar){
-      let result =  this.usersServices.delete(this.user._id)
-      if(result.error){
-        alert(result.error)
-      }else{
-        alert(`Se ha eliminado el ususrio '${this.user.username}' correctamente`)
-      }
+      let deleteAction =  await this.usersServices.delete(this.user._id)
+      await deleteAction.subscribe( (response:IUser | any) => {
+        if(response._id){
+          alert(`Se ha eliminado el ususrio '${response.username}' se ha eliminado correctamente`)
+          this.router.navigate(['/home'])
+        }else{
+          alert(response.error)
+        }
+      })
     }
   }
 }
