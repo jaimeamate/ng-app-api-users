@@ -19,7 +19,7 @@ export class UsersService {
     return this.httpClient.get<IUser>(`${this.baseUrl}/${_id}`)
   }
 
-  delete(_id: string): Observable<IUser> {
+  delete(_id: string | undefined): Observable<IUser> | any {
     return this.httpClient.delete<IUser>(`${this.baseUrl}/${_id}`)
   }
 
