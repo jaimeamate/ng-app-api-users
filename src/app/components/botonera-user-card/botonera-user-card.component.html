@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between align-items-center gap-4 text-center">
+    <a [routerLink]="['/user',user?._id]" class="link-primary link-underline link-underline-opacity-0">
+        <img src="./assets/images/icons/bx-search.png" alt="Search icon" class="img-fluid" />
+        <p>Ver detalle</p>
+    </a>
+    <a [routerLink]="['/updateuser', user?._id]" class="link-primary link-underline link-underline-opacity-0">
+        <img src="./assets/images/icons/bx-refresh.png" alt="Update icon" class="img-fluid"/>
+        <p>Actualizar</p>
+    </a>
+    <a (click)="deleteUser()" class="link-primary link-underline link-underline-opacity-0">
+        <img src="./assets/images/icons/bx-trash.png" alt="Delete icon" class="img-fluid"/>
+        <p>Borrar</p>
+    </a>
+</div>

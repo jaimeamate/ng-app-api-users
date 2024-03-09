@@ -1,1 +1,5 @@
-<p>user-card works!</p>
+<div class="card d-flex flex-column align-items-center py-2">
+    <img [src]="user?.image" [alt]="user?.first_name" class="img-fluid rounded-circle">
+    <span class="fs-4 mb-2">{{user?.username}}</span>
+    <app-botonera-user-card [user]="user"></app-botonera-user-card>
+</div>
