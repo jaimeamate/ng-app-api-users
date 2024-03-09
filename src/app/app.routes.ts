@@ -14,7 +14,7 @@ export const routes: Routes = [
         component:UsersListComponent
     },
     {
-        path:'user/:id', 
+        path:'user/:_id', 
         component:UserViewComponent
     },
     {
@@ -22,7 +22,7 @@ export const routes: Routes = [
         component:UserFormComponent
     },
     {
-        path:'updateuser/:id', 
+        path:'updateuser/:_id', 
         component:UserFormComponent
     },
     {
