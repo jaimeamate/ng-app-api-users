@@ -20,5 +20,5 @@
         <input type="text" class="form-control" id="image" placeholder="https://domain.subdomain/path/.../image.image-extension" formControlName="image">
     </div>
     <input type="submit" [value]="button1_value" class="btn btn-success me-2" [disabled]="!usersForm.valid">
-    <input [type]="button2_type" [value]="button2_value" class="btn btn-secondary">
+    <input [type]="button2_type" [value]="button2_value" class="btn btn-secondary" (click)="goHome()">
 </form>

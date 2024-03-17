@@ -1,0 +1,9 @@
+img {
+    transition: all .5s ease-out;
+    width: 48px;
+    &:hover {
+        transition: all .5s ease-out;
+        border: 1px solid blueviolet;
+        /* width: 60px; */
+    }
+}

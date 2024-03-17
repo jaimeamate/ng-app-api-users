@@ -9,7 +9,7 @@ import { IUser } from '../interfaces/iuser.interface';
 export class UsersService {
   
   httpClient: HttpClient = inject(HttpClient)
-  baseUrl: string = ' https://peticiones.online/api/users'
+  baseUrl: string = 'https://peticiones.online/api/users'
   
   getAll(): Observable<IUser[]> {
     return this.httpClient.get<IUser[]>(this.baseUrl)
